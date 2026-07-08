@@ -1,3 +1,4 @@
+import {UserModel} from '../models/user-model.js'
 import bcrypt from 'bcrypt'
 
 export async function getAllUsers(req,res){
