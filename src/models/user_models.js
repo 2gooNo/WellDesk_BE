@@ -7,11 +7,11 @@ const userSchema = new mongoose.Schema({
                 required: true},
             info: [
                 {
-                    day: {type: Number,required: true},
+                    day: {type: Number, required: true},
                     when: [
                         {
                             time: {type: Number, required: true},
-                            quantity: {type: Number, required: true}
+                            quantity: {type: Number, required: true},
                         }
                     ]
                 }
@@ -21,13 +21,13 @@ const userSchema = new mongoose.Schema({
     month_water_history:[
         {
             date: {type: Date, required: true},
-            value: {type: Number, required: true}
+            value: {type: Number, required: true},
         }
     ],
     month_butt_history:[
         {
             date: {type: Date, required: true},
-            value: {type: Number, required: true}
+            value: {type: Number, required: true},
         }
     ],
     back_error:[
@@ -39,24 +39,19 @@ const userSchema = new mongoose.Schema({
     month_back_history:[
         {
             date: {type: Date, required: true},
-            value: {type: Number, required: true}
-        }
-    ],
-    back_mean:[
-        {
-            date: {type: Date, required: true},
-            value: {type: Number, required: true}
+            value: {type: Number, required: true},
         }
     ],
     butt_mean:[
         {
             col: {type: Number, required: true},
             row: {type: Number, required: true},
-            value: {type: Number, required: true}
+            value: {type: Number, required: true},
         }
     ],
+    back_mean: {type: Number, required: true},
     displayName: {type: String, required: true},
-    email: {type: String, required: true},
+    email: {type: String, required: true, unique: true},
     password: {type: String, required: true},
     daily_water_goal: {type: Number, required: true},
 
