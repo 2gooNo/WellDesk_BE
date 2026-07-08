@@ -12,17 +12,17 @@ app.use(express.json());
 // app.use("/", userRouter);
 // app.use("/", quizRouter);
 // app.use("/", catRouter);
-// const connectDb = async () => {
-//   try {
-//     await mongoose.connect(
-//       "mongodb+srv://iveelturu:iveel0131@iveel.embu1nk.mongodb.net/"
-//     );
-//     console.log("All Database Connected");
-//   } catch (error) {
-//     console.error("Database connection failed:", error.message);
-//   }
-// };
-// connectDb();
+const connectDb = async () => {
+  try {
+    await mongoose.connect(
+      "mongodb+srv://ideree03161_db_user:Gzc5l4TyAZP9utVq@welldesk.zxnyasz.mongodb.net/"
+    );
+    console.log("All Database Connected");
+  } catch (error) {
+    console.error("Database connection failed:", error.message);
+  }
+};
+connectDb();
 
 app.listen(8000, () => {
   console.log("http://localhost:8000/");
