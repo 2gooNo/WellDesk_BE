@@ -14,11 +14,7 @@ export const createUser = async (req,res) => {
         console.log(req.body)
         const user = await UserModel.create(req.body);
         res.status(201).json(user);
-        const HashPassword = await bcrypt.hash(req.body.password || "", 10)
-        const user = await UserModel.create({
-            ...req.body,
-            password: HashPassword
-        });
+       
     }catch(err){
         res.status(400).json({error : err});
     }
