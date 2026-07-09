@@ -30,12 +30,6 @@ const userSchema = new mongoose.Schema({
             value: {type: Number, required: true},
         }
     ],
-    back_error:[
-        {
-            when: {type: Date, required: true},
-            off_angle: {type: Number, required: true},
-        }
-    ],
     month_back_history:[
         {
             date: {type: Date, required: true},
