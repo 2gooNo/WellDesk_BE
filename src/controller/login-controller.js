@@ -1,4 +1,4 @@
-import {Usermodel} from '../models.user_models.js'
+import {UserModel} from '../models/user_models.js'
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 export const Login = async (req,res) => {
