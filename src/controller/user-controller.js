@@ -9,21 +9,12 @@ export async function getAllUsers(req,res){
         res.status(400).json({error : err})
     }
 }
-// export const getUser = async (req,res) => {
-//     try{
-//         const user = await User.findById(req.params.id);
-//         res.status(200).json(user);
-//     }catch(err){
-//         res.status(400).json({error : err});
-//     }
-// }
 export const createUser = async (req,res) => {
     try{
              console.log(req.body)  
              const hashedPassword = await bcrypt.hash(req.body.password || "" , 10)
              req.body.password = hashedPassword
         const user = await UserModel.create(req.body);
-   
         res.status(201).json(user);
     }catch(err){
         res.status(400).json({error : err});
