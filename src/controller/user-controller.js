@@ -19,7 +19,9 @@ export async function getAllUsers(req,res){
 // }
 export const createUser = async (req,res) => {
     try{
-             console.log(req.body)
+             console.log(req.body)  
+             const hashedPassword = await bcrypt.hash(req.body.password || "" , 10)
+             req.body.password = hashedPassword
         const user = await UserModel.create(req.body);
    
         res.status(201).json(user);
