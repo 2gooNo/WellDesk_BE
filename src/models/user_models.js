@@ -44,6 +44,7 @@ const userSchema = new mongoose.Schema({
         }
     ],
     back_mean: {type: Number, required: true},
+    back_count: {type: Number, required: true},
     displayName: {type: String, required: true},
     email: {type: String, required: true, unique: true},
     password: {type: String, required: true},
