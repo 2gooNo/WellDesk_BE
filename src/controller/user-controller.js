@@ -9,20 +9,16 @@ export async function getAllUsers(req,res){
         res.status(400).json({error : err})
     }
 }
-// export const getUser = async (req,res) => {
-//     try{
-//         const user = await User.findById(req.params.id);
-//         res.status(200).json(user);
-//     }catch(err){
-//         res.status(400).json({error : err});
-//     }
-// }
 export const createUser = async (req,res) => {
     try{
-             console.log(req.body)
+        console.log(req.body)
         const user = await UserModel.create(req.body);
-   
         res.status(201).json(user);
+        const HashPassword = await bcrypt.hash(req.body.password || "", 10)
+        const user = await UserModel.create({
+            ...req.body,
+            password: HashPassword
+        });
     }catch(err){
         res.status(400).json({error : err});
     }
