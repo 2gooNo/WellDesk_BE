@@ -1,7 +1,7 @@
 import {UserModel} from '../models/user_models.js'
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
-export const Login = async (req,res) => {
+export const Login = async (req, res) => {
 
     const body = req.body;
 
@@ -25,7 +25,7 @@ export const Login = async (req,res) => {
 
             const token = jwt.sign(
                 {user_id: oneUser._id, email:oneUser.email},
-                "privitekey",
+                "privatekey",
                 {
                     expiresIn: "72h"
                 }
