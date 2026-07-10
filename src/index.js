@@ -3,8 +3,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import { userRouter } from "./routes/user-routes.js";
-// import { quizRouter } from "./routes/quiz-routes.js";
-// import { catRouter } from "./routes/category-routes.js";
+import {backRouter} from "./routes/back-routes.js"
 
 dotenv.config();
 
@@ -13,8 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/", userRouter);
-// app.use("/", quizRouter);
-// app.use("/", catRouter);
+
 const connectDb = async () => {
   try {
     const mongoUri = process.env.MONGODB_URI;
